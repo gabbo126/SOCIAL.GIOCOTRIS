@@ -1,0 +1,289 @@
+/**
+ * ENHANCED MEDIA UPLOADER - Styling CSS
+ * Design moderno, responsive, Bootstrap 5 compatibile
+ */
+
+/* ===== ENHANCED UPLOAD CONTAINER ===== */
+.enhanced-media-upload {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== TAB NAVIGATION ===== */
+.upload-tabs .btn-group {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.upload-tabs .btn {
+    border-radius: 0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.upload-tabs .btn:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.upload-tabs .btn:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* ===== DRAG & DROP ZONE ===== */
+.drag-drop-zone {
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    background: #f8f9fa;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.drag-drop-zone:hover {
+    border-color: #0d6efd;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+}
+
+.drag-drop-zone.drag-over {
+    border-color: #0d6efd;
+    background: #e3f2fd;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.drag-content {
+    text-align: center;
+    pointer-events: none;
+}
+
+.drag-drop-zone .bi-cloud-upload {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.drag-drop-zone:hover .bi-cloud-upload {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===== SUPPORTED FORMATS ===== */
+.supported-formats {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* ===== URL INPUT SECTION ===== */
+.url-input-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.url-input-section .form-control {
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.url-input-section .btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+}
+
+.url-examples {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.url-examples small {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.url-examples small:first-child {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== UPLOAD STATUS ===== */
+.upload-status {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.upload-status .progress {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+}
+
+.upload-status .progress-bar {
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* ===== MEDIA GRID ===== */
+.media-preview-grid {
+    margin-top: 2rem;
+}
+
+.media-preview-item {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.media-preview-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.media-preview-item .card-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.media-preview-item .card-body {
+    padding: 0.75rem;
+}
+
+.media-preview-item img {
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.media-preview-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .enhanced-media-upload {
+        padding: 1rem;
+    }
+    
+    .drag-drop-zone {
+        min-height: 140px;
+        padding: 1rem;
+    }
+    
+    .upload-tabs .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .url-input-section {
+        padding: 1rem;
+    }
+    
+    .media-preview-grid .col-md-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .upload-tabs .btn-group {
+        flex-direction: column;
+    }
+    
+    .upload-tabs .btn {
+        border-radius: 0 !important;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .upload-tabs .btn:first-child {
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+    }
+    
+    .upload-tabs .btn:last-child {
+        border-bottom-left-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+        border-bottom: none;
+    }
+    
+    .drag-drop-zone {
+        min-height: 120px;
+    }
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.upload-loading {
+    animation: pulse 2s infinite;
+}
+
+/* ===== NOTIFICATION OVERRIDE ===== */
+.position-fixed.alert {
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===== ENHANCED TOOLTIPS ===== */
+[data-bs-toggle="tooltip"] {
+    cursor: help;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.drag-drop-zone:focus-within {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

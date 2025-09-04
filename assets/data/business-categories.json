@@ -1,0 +1,161 @@
+{
+    "categories": {
+        "ristorazione": {
+            "name": "Ristorazione",
+            "icon": "🍽️",
+            "items": [
+                "Ristorante", "Pizzeria", "Trattoria", "Osteria", "Tavola Calda", 
+                "Fast Food", "Bar", "Pub", "Birreria", "Wine Bar",
+                "Pasticceria", "Gelateria", "Pasticceria", "Caffetteria", "Rosticceria",
+                "Paninoteca", "Hamburgeria", "Panineria", "Spaghetteria", "Braceria",
+                "Steakhouse", "Ristorante Etnico", "Sushi Bar", "Ristorante Cinese",
+                "Ristorante Indiano", "Kebab", "Pizzeria al Taglio", "Tavola Fredda",
+                "Ristorante di Pesce", "Agriturismo", "Locanda", "Enoteca con Cucina"
+            ]
+        },
+        "servizi_persona": {
+            "name": "Servizi alla Persona",
+            "icon": "💇",
+            "items": [
+                "Parrucchiere", "Barbiere", "Centro Estetico", "Estetista", "Nail Art",
+                "Centro Massaggi", "SPA", "Centro Benessere", "Solarium", "Tatuatore",
+                "Piercing", "Centro Dimagrimento", "Personal Trainer", "Nutrizionista",
+                "Fisioterapista", "Osteopata", "Chiropratico", "Podologo", "Manicure",
+                "Pedicure", "Trucco Permanente", "Extension Ciglia", "Depilazione Laser",
+                "Massaggio Terapeutico", "Riflessologia", "Shiatsu", "Centro Yoga"
+            ]
+        },
+        "servizi_professionali": {
+            "name": "Servizi Professionali",
+            "icon": "💼",
+            "items": [
+                "Avvocato", "Notaio", "Commercialista", "Consulente del Lavoro", "Architetto",
+                "Ingegnere", "Geometra", "Medico", "Dentista", "Veterinario",
+                "Psicologo", "Consulente Informatico", "Agenzia Immobiliare", "Agenzia Assicurativa",
+                "Agenzia di Viaggi", "Wedding Planner", "Fotografo", "Videomaker",
+                "Grafico", "Web Designer", "Traduttore", "Interprete", "Consulente Marketing",
+                "Agenzia Pubblicità", "Studio Legale", "Studio Medico", "Studio Dentistico",
+                "Laboratorio Analisi", "Centro Radiologico", "Farmacia", "Ottico"
+            ]
+        },
+        "servizi_tecnici": {
+            "name": "Servizi Tecnici",
+            "icon": "🔧",
+            "items": [
+                "Idraulico", "Elettricista", "Meccanico", "Carrozziere", "Gommista",
+                "Autolavaggio", "Autofficina", "Servizio Pneumatici", "Climatizzazione",
+                "Antennista", "Fabbro", "Vetraio", "Serraturiere", "Parquettista",
+                "Imbianchino", "Muratore", "Cartongessista", "Piastrellista", "Infissi",
+                "Tapparelle", "Tende da Sole", "Giardini e Potature", "Disinfestazione",
+                "Pulizie", "Traslochi", "Riparazioni Elettrodomestici", "Caldaie",
+                "Condizionatori", "Sistemi di Sicurezza", "Videosorveglianza", "Allarmi"
+            ]
+        },
+        "commercio_alimentare": {
+            "name": "Commercio Alimentare",
+            "icon": "🛒",
+            "items": [
+                "Supermercato", "Alimentari", "Macelleria", "Salumeria", "Pescheria",
+                "Panetteria", "Panificio", "Forno", "Caseificio", "Gastronomia",
+                "Enoteca", "Negozio Vini", "Ortofrutta", "Fruttivendolo", "Negozio Bio",
+                "Prodotti Tipici", "Torrefazione", "Negozio Dolci", "Cioccolateria",
+                "Distributore Bevande", "Grossista Alimentare", "Cash & Carry",
+                "Minimarket", "Negozio Etnico", "Prodotti Surgelati", "Latteria"
+            ]
+        },
+        "commercio_generale": {
+            "name": "Commercio Generale",
+            "icon": "🏪",
+            "items": [
+                "Abbigliamento", "Calzature", "Borse e Accessori", "Gioielleria", "Orologeria",
+                "Elettronica", "Telefonia", "Informatica", "Libreria", "Edicola",
+                "Cartoleria", "Cancelleria", "Ferramenta", "Bricolage", "Casalinghi",
+                "Arredamento", "Mobili", "Tende e Tessuti", "Biancheria Casa", "Profumeria",
+                "Cosmetici", "Prodotti per Capelli", "Negozio Giocattoli", "Articoli Sportivi",
+                "Outdoor", "Camping", "Pesca", "Caccia", "Ottica", "Farmacia",
+                "Parafarmacia", "Sanitari", "Ortopedia", "Negozio Auto", "Ricambi Auto"
+            ]
+        },
+        "ricettivita": {
+            "name": "Ricettività e Turismo",
+            "icon": "🏨",
+            "items": [
+                "Hotel", "Albergo", "Pensione", "Bed & Breakfast", "Casa Vacanze",
+                "Appartamenti Turistici", "Agriturismo", "Camping", "Villaggio Turistico",
+                "Resort", "Residence", "Ostello", "Affittacamere", "Guest House",
+                "Agenzia Turistica", "Tour Operator", "Guida Turistica", "Noleggio Auto",
+                "Rent a Car", "Taxi", "NCC", "Autobus Turistici", "Escursioni",
+                "Attività Ricreative", "Parco Avventura", "Maneggio", "Equitazione"
+            ]
+        },
+        "intrattenimento": {
+            "name": "Intrattenimento e Svago",
+            "icon": "🎭",
+            "items": [
+                "Cinema", "Teatro", "Discoteca", "Locale Notturno", "Karaoke",
+                "Bowling", "Biliardo", "Sala Giochi", "Escape Room", "Laser Tag",
+                "Paintball", "Go-kart", "Minigolf", "Parco Giochi", "Luna Park",
+                "Acquario", "Zoo", "Parco Naturale", "Museo", "Pinacoteca",
+                "Centro Culturale", "Biblioteca", "Sala Conferenze", "Centro Congressi",
+                "Sala Ricevimenti", "Location Eventi", "Catering", "Banqueting"
+            ]
+        },
+        "sport_fitness": {
+            "name": "Sport e Fitness",
+            "icon": "💪",
+            "items": [
+                "Palestra", "Fitness Center", "Piscina", "Centro Acquatico", "Tennis",
+                "Padel", "Squash", "Calcetto", "Basket", "Pallavolo",
+                "Arti Marziali", "Boxe", "Kickboxing", "Crossfit", "Pilates",
+                "Zumba", "Spinning", "Acqua Fitness", "Centro Riabilitazione", "Fisioterapia",
+                "Massoterapia", "Centro Sportivo", "Scuola Calcio", "Scuola Tennis",
+                "Scuola Nuoto", "Istruttore Fitness", "Personal Trainer Privato", "Yoga"
+            ]
+        },
+        "salute_medicina": {
+            "name": "Salute e Medicina",
+            "icon": "🏥",
+            "items": [
+                "Ospedale", "Clinica Privata", "Poliambulatorio", "Centro Medico", "Guardia Medica",
+                "Pronto Soccorso", "Laboratorio Analisi", "Centro Radiologico", "TAC", "Risonanza",
+                "Ecografia", "Cardiologia", "Neurologia", "Ortopedia", "Urologia",
+                "Ginecologia", "Pediatria", "Geriatria", "Oncologia", "Dermatologia",
+                "Oculistica", "Otorinolaringoiatria", "Pneumologia", "Endocrinologia", "Diabetologia",
+                "Reumatologia", "Psichiatria", "Psicoterapia", "Logopedia", "Dietologia"
+            ]
+        },
+        "automotive": {
+            "name": "Automotive",
+            "icon": "🚗",
+            "items": [
+                "Concessionario Auto", "Auto Usate", "Autofficina", "Meccanico Auto", 
+                "Elettrauto", "Carrozzeria", "Verniciatura Auto", "Gommista", "Pneumatici",
+                "Autolavaggio", "Car Detailing", "Lucidatura Auto", "Accessori Auto",
+                "Tuning", "Impianti GPL", "Impianti Metano", "Soccorso Stradale", "Carro Attrezzi",
+                "Revisioni Auto", "Collaudi", "Pratiche Auto", "Assicurazioni Auto", "Noleggio Auto",
+                "Rent a Car", "Car Sharing", "Rivendita Ricambi", "Demolizioni Auto", "Rottamazione"
+            ]
+        },
+        "edilizia_casa": {
+            "name": "Edilizia e Casa",
+            "icon": "🏗️",
+            "items": [
+                "Impresa Edile", "Costruzioni", "Ristrutturazioni", "Edilizia Residenziale",
+                "Edilizia Commerciale", "Edilizia Industriale", "Architetto", "Ingegnere Civile",
+                "Geometra", "Progettazione", "Direzione Lavori", "Sicurezza Cantieri",
+                "Demolizioni", "Scavi", "Fondazioni", "Murature", "Intonaci",
+                "Pavimenti", "Rivestimenti", "Piastrelle", "Parquet", "Laminati",
+                "Tinteggiature", "Cartongesso", "Controsoffitti", "Isolamenti", "Coibentazioni",
+                "Impermeabilizzazioni", "Coperture", "Tetti", "Tegole", "Lattoneria"
+            ]
+        }
+    },
+    "meta": {
+        "version": "1.0",
+        "last_updated": "2024-01-18",
+        "total_categories": 12,
+        "total_items": 385,
+        "language": "it",
+        "region": "Italy"
+    }
+}

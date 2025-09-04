@@ -1,0 +1,844 @@
+/* Stili CSS Legacy per Social Gioco Tris - Mobile Responsive */
+/* IMPORTANTE: Questi stili sono gradualmente deprecati a favore di modern-design-system.css */
+
+body {
+    /* Rimuoviamo font-family per permettere al sistema moderno di gestire la tipografia */
+    line-height: 1.6;
+    margin: 0;
+    /* background e color gestiti dal sistema moderno */
+}
+
+/* Container legacy - solo per compatibilità con vecchie pagine */
+.container {
+    width: min(90%, 1200px); /* Responsive: 90% su mobile, max 1200px su desktop */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 1rem; /* Responsive padding */
+}
+
+/* Media queries per mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 0.75rem;
+    }
+}
+
+/* Header legacy - DEPRECATO: ora gestito da navbar-modern */
+header.legacy-header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: #0779e4 3px solid;
+}
+
+header.legacy-header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header.legacy-header h1 {
+    margin: 0;
+}
+
+header.legacy-header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header.legacy-header nav ul li {
+    padding: 0;
+}
+
+/* Mobile responsive per header legacy */
+@media (max-width: 768px) {
+    header.legacy-header {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    
+    header.legacy-header nav ul {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+main {
+    padding: 20px 0;
+}
+
+.video-box {
+    margin: 20px 0;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+/* Stili per il form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #0779e4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #056ab2;
+}
+
+/* Stili per la pagina Aziende e Dettaglio */
+
+.section-title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0779e4;
+    padding-bottom: 10px;
+}
+
+.info-box {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* --- Griglia Card Aziende --- */
+.aziende-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.azienda-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.azienda-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-image-container {
+    width: 100%;
+    padding-top: 60%; /* Aspect ratio per l'immagine */
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra lo spazio */
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.card-description {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.card-cta {
+    display: inline-block;
+    align-self: flex-start;
+    background: #0779e4;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.card-link:hover .card-cta {
+    background: #056ab2;
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Occupa tutta la larghezza della griglia */
+    text-align: center;
+    padding: 40px;
+}
+
+/* --- Pagina Dettaglio Azienda --- */
+.azienda-dettaglio-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+    .azienda-dettaglio-layout {
+        grid-template-columns: 1fr 1.2fr; /* Layout a due colonne su schermi grandi */
+        padding: 30px;
+    }
+}
+
+.dettaglio-gallery .gallery-main-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.dettaglio-gallery .gallery-main-image img {
+    width: 100%;
+    display: block;
+}
+
+.dettaglio-gallery .gallery-thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.dettaglio-gallery .thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.dettaglio-gallery .thumbnail:hover {
+    border-color: #0779e4;
+}
+
+.dettaglio-info .dettaglio-nome {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.dettaglio-info .dettaglio-tipo-struttura {
+    display: inline-block;
+    background: #e9ecef;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.dettaglio-sezione {
+    margin-bottom: 25px;
+}
+
+.dettaglio-sezione h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.servizi-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.servizi-lista li {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.contatti p {
+    margin: 5px 0;
+}
+
+
+/* --- Sezione Video --- */
+.video-container-wrapper {
+    margin-bottom: 40px;
+}
+
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporzioni 16:9 */
+    background-color: #000;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Sezione Griglia Alfabetica --- */
+.alphabet-grid-wrapper {
+    margin-bottom: 40px;
+}
+
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.letter-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Allinea la lettera in basso */
+    align-items: center;
+    aspect-ratio: 1 / 1; /* Mantiene la forma quadrata */
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-box .letter {
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.letter-box .image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e9ecef;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Stili per caselle attive (con aziende) */
+.letter-box.active {
+    border: 2px solid #0779e4;
+    cursor: pointer;
+}
+
+.letter-box.active .image-placeholder {
+    /* In futuro, potresti impostare un'immagine di sfondo qui */
+    /* background-image: url('path/to/image.jpg'); */
+    background-color: #d4e6f1;
+}
+
+.letter-box.active:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.letter-box.active:hover .image-placeholder {
+    transform: scale(1.1);
+}
+
+/* Stili per caselle inattive (senza aziende) */
+.letter-box.inactive {
+    border: 2px solid #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.letter-box.inactive .image-placeholder {
+    background-color: #f8f9fa;
+}
+
+/* Sezione risultati filtrati */
+.aziende-filtrate-wrapper {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    .letter-box {
+        font-size: 1.2rem;
+    }
+}
+
+/* =================================== */
+/*          STILI AREA ADMIN           */
+/* =================================== */
+
+.admin-header, .admin-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px 0;
+}
+
+.admin-header .container, .admin-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    background: #3498db;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.admin-main {
+    background: #ecf0f1;
+    padding: 40px 0;
+    min-height: 80vh;
+}
+
+/* --- Pagina di Login --- */
+.admin-login-container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Dashboard --- */
+.dashboard-actions {
+    margin-bottom: 30px;
+}
+
+.table-container {
+    overflow-x: auto; /* Per la responsività su mobile */
+}
+
+.token-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.token-table th, .token-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.token-table th {
+    background: #f2f2f2;
+    font-weight: bold;
+}
+
+.token-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.token-table input[type='text'] {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #fdfdfd;
+    font-family: monospace;
+}
+
+.status-used {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.status-active {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.status-expired {
+    color: #f39c12; /* Arancione */
+    font-weight: bold;
+}
+
+/* =================================== */
+/*      STILI DIRETTA YOUTUBE        */
+/* =================================== */
+
+.live-stream-section, .live-stream-placeholder {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.live-stream-section h3, .live-stream-placeholder h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #c0392b; /* Rosso */
+}
+
+/* === STILI SISTEMA PACCHETTI === */
+.package-section {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.package-section h3 {
+    color: #495057;
+    margin-top: 0;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.current-package {
+    margin: 15px 0;
+}
+
+.package-info {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.package-foto {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-left: 4px solid #2196f3;
+}
+
+.package-video {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    border-left: 4px solid #9c27b0;
+}
+
+.package-info strong {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.package-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.upgrade-section {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.upgrade-section h4 {
+    color: #856404;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.upgrade-option {
+    display: block;
+    padding: 10px;
+    background: white;
+    border: 2px solid #ffc107;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upgrade-option:hover {
+    background: #fff3cd;
+    border-color: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.upgrade-option input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.upgrade-option strong {
+    color: #856404;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.upgrade-option small {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Radio buttons per selezione pacchetto in registrazione */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.radio-option {
+    display: block;
+    padding: 15px;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.radio-option:hover {
+    border-color: #007bff;
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.3);
+}
+
+.radio-option input[type="radio"]:checked + strong {
+    color: #007bff;
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    border-color: #007bff;
+    background: #e7f3ff;
+}
+
+.radio-option strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.radio-option small {
+    color: #6c757d;
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .radio-group {
+        gap: 10px;
+    }
+    
+    .radio-option, .upgrade-option {
+        padding: 12px;
+    }
+    
+    .package-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+}
+
+.live-stream-placeholder p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporzioni 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Stili per il form di inserimento */
+.inserimento-form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.inserimento-form .form-group {
+    margin-bottom: 20px;
+}
+
+.inserimento-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.inserimento-form input[type='text'],
+.inserimento-form input[type='tel'],
+.inserimento-form input[type='email'],
+.inserimento-form input[type='url'],
+.inserimento-form textarea,
+.inserimento-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Aggiunto per coerenza */
+}
+
+.inserimento-form input[type='file'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.inserimento-form fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.inserimento-form legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: #333;
+}
+
+/* Classi per template unificato company-form */
+.company-fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.fieldset-legend {
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+}
+
+.current-logo-preview {
+    width: 50px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.current-photo-preview {
+    width: 50px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Messaggi di stato */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

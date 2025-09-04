@@ -1,0 +1,1275 @@
+/*
+ * MOBILE FIXES & ENHANCEMENTS - SOCIAL.GIOCOTRIS
+ * Correzioni specifiche per problemi di visualizzazione mobile
+ * Caricato dopo modern-design-system.css per sovrascrivere se necessario
+ */
+
+/* =============================================================================
+   CORREZIONI MOBILI SPECIFICHE
+   ============================================================================= */
+
+/* Prevenzione overflow orizzontale su mobile */
+html, body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Touch target migliorati per mobile */
+@media (max-width: 768px) {
+    /* Button e link più grandi per touch */
+    .btn, .nav-link-modern, .filter-letter {
+        min-height: 44px; /* Apple HIG raccomandato */
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Form inputs ottimizzati per mobile */
+    .form-control, .form-select {
+        font-size: 16px; /* Previene zoom iOS */
+        padding: 0.75rem;
+        min-height: 48px;
+    }
+    
+    /* Card responsive con migliore spaziatura */
+    .card-modern {
+        margin-bottom: 1rem;
+        border-radius: 0.75rem;
+    }
+    
+    /* ========================================================================
+       HEADER MOBILE - CORREZIONE CRITICA BUGS MOBILE
+       Fix urgente: header sfasato, hamburger invisibile, home button malformato
+       ======================================================================== */
+    
+    /* CORREZIONE CRITICA: Body offset preciso per evitare overlap */
+    body {
+        padding-top: 80px !important; /* Header mobile: 70px + 10px sicurezza */
+    }
+    
+    .hero-section-modern {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Header mobile: posizionamento fisso e dimensioni corrette */
+    .navbar-modern {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1050 !important;
+        padding: 0.5rem 0 !important;
+        min-height: 70px !important;
+        height: 70px !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(15px) !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .navbar-modern .container {
+        height: 100%;
+        padding: 0 1rem;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        position: relative;
+    }
+    
+    /* HAMBURGER BUTTON - FIX CRITICO: Visibile e cliccabile */
+    .brand-hamburger-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 48px !important;
+        height: 48px !important;
+        background: rgba(52, 73, 94, 0.9) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 12px !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        z-index: 1051 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .brand-hamburger-btn:hover {
+        background: rgba(52, 73, 94, 1) !important;
+        transform: scale(1.05) !important;
+    }
+    
+    .brand-hamburger-btn:active {
+        transform: scale(0.98) !important;
+    }
+    
+    .hamburger-line {
+        display: block !important;
+        width: 20px !important;
+        height: 2px !important;
+        background: white !important;
+        margin: 2px 0 !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        border-radius: 1px !important;
+    }
+    
+    .brand-hamburger-btn.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px) !important;
+    }
+    
+    .brand-hamburger-btn.active .hamburger-line:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .brand-hamburger-btn.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px) !important;
+    }
+    
+    /* Brand mobile centrato e visibile */
+    .navbar-brand-modern {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        text-align: center !important;
+        z-index: 1049 !important;
+    }
+    
+    .brand-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0 !important;
+    }
+    
+    .brand-name {
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        color: #2c3e50 !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+    }
+    
+    .brand-tagline {
+        font-size: 0.75rem !important;
+        font-weight: 400 !important;
+        color: #7f8c8d !important;
+        opacity: 0.8 !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+    
+    /* Desktop navigation nascosta su mobile */
+    .navbar-nav-container {
+        display: none !important;
+    }
+    
+    /* HAMBURGER MENU OVERLAY - RISCRITTURA COMPLETA */
+    .hamburger-menu-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.95) !important;
+        z-index: 99999 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease-in-out !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .hamburger-menu-overlay.active {
+        transform: translateX(0) !important;
+    }
+    
+    .hamburger-menu-container {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom-left-radius: 24px !important;
+        border-bottom-right-radius: 24px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+        padding: 2rem 1.5rem !important;
+        margin: 0 !important;
+        min-height: 60vh !important;
+        transform: translateY(-100%) !important;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    .hamburger-menu-overlay.active .hamburger-menu-container {
+        transform: translateY(0) !important;
+    }
+    
+    /* MENU HEADER - PULITO SENZA QUADRATINI */
+    .hamburger-menu-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem 0 !important;
+        margin-bottom: 2rem !important;
+        border-bottom: 2px solid #e9ecef !important;
+    }
+    
+    .menu-title {
+        flex-grow: 1 !important;
+    }
+    
+    .menu-title-text {
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        color: #2c3e50 !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .hamburger-close-btn {
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #f8f9fa !important;
+        border: 2px solid #dee2e6 !important;
+        border-radius: 50% !important;
+        color: #495057 !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1) !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .hamburger-close-btn:hover {
+        background: #e9ecef !important;
+        border-color: #adb5bd !important;
+        color: #212529 !important;
+    }
+    
+    .hamburger-close-btn:active {
+        transform: scale(0.95) !important;
+        background: #dee2e6 !important;
+    }
+    
+    /* NAVIGATION ITEMS - PULITO SENZA QUADRATINI */
+    .hamburger-nav-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 1.25rem 0 !important;
+        margin-bottom: 0.5rem !important;
+        border-bottom: 1px solid #e9ecef !important;
+        text-decoration: none !important;
+        color: #495057 !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+        min-height: 60px !important;
+        transition: all 0.2s ease !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1) !important;
+        position: relative !important;
+    }
+    
+    .hamburger-nav-item:hover {
+        color: #007bff !important;
+        padding-left: 0.5rem !important;
+    }
+    
+    .hamburger-nav-item:active {
+        color: #0056b3 !important;
+        background: rgba(0, 123, 255, 0.05) !important;
+    }
+    
+    .hamburger-nav-item.active {
+        color: #007bff !important;
+        font-weight: 700 !important;
+        border-bottom-color: #007bff !important;
+        border-bottom-width: 2px !important;
+    }
+    
+    /* RIMOSSO COMPLETAMENTE - NESSUNA ICONA QUADRATA */
+    
+    .nav-item-text {
+        flex-grow: 1 !important;
+        font-size: 1.1rem !important;
+        font-weight: inherit !important;
+    }
+    
+    .nav-item-count {
+        background: #6c757d !important;
+        color: white !important;
+        padding: 0.3rem 0.8rem !important;
+        border-radius: 15px !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        min-width: 30px !important;
+        text-align: center !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .nav-badge-new {
+        position: absolute !important;
+        top: 0.5rem !important;
+        right: 0.5rem !important;
+        background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+        color: white !important;
+        padding: 0.2rem 0.5rem !important;
+        border-radius: 12px !important;
+        font-size: 0.7rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    /* CATEGORIES - PULITO SENZA QUADRATINI */
+    .hamburger-categories {
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
+        border-top: 2px solid #e9ecef !important;
+    }
+    
+    .categories-title {
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        color: #2c3e50 !important;
+        margin-bottom: 1.5rem !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .category-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 1rem 0 !important;
+        margin-bottom: 0.5rem !important;
+        border-bottom: 1px solid #e9ecef !important;
+        text-decoration: none !important;
+        color: #6c757d !important;
+        font-weight: 500 !important;
+        min-height: 50px !important;
+        transition: all 0.2s ease !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .category-item:hover {
+        color: #495057 !important;
+        padding-left: 0.5rem !important;
+    }
+    
+    .category-item:active {
+        color: #212529 !important;
+        background: rgba(0, 0, 0, 0.02) !important;
+    }
+    
+    .category-name {
+        flex-grow: 1 !important;
+        font-size: 1rem !important;
+        font-weight: inherit !important;
+    }
+    
+    .category-count {
+        background: #adb5bd !important;
+        color: white !important;
+        padding: 0.25rem 0.7rem !important;
+        border-radius: 12px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        min-width: 28px !important;
+        text-align: center !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* FOOTER MENU */
+    .hamburger-menu-footer {
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+        text-align: center !important;
+    }
+    
+    .menu-footer-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+    }
+    
+    .footer-brand {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        color: #34495e !important;
+    }
+    
+    .footer-tagline {
+        font-size: 0.8rem !important;
+        color: #7f8c8d !important;
+        opacity: 0.8 !important;
+    }
+    
+    /* Navigation container mobile */
+    .navbar-nav-container {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    /* Menu navigation mobile - horizontal compatto */
+    .navbar-nav-modern {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.25rem;
+        margin: 0;
+        padding: 0;
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Link navigation ottimizzati per touch */
+    .nav-item-modern {
+        margin: 0;
+    }
+    
+    .nav-link-modern {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+        padding: 0.5rem 0.75rem !important;
+        border-radius: 10px !important;
+        font-size: 0.75rem !important;
+        font-weight: 500 !important;
+        color: var(--neutral-600) !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        min-height: 48px !important; /* Touch target iOS/Android */
+        min-width: 48px !important;
+        background: transparent !important;
+        border: 1px solid transparent !important;
+        justify-content: center !important;
+    }
+    
+    .nav-link-modern:hover {
+        background: rgba(var(--primary-500-rgb), 0.08) !important;
+        color: var(--primary-600) !important;
+        border-color: rgba(var(--primary-500-rgb), 0.2) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    .nav-link-modern.active {
+        background: linear-gradient(135deg, var(--primary-50), var(--primary-100)) !important;
+        color: var(--primary-700) !important;
+        border-color: var(--primary-200) !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Icone navigation mobile */
+    .nav-icon {
+        font-size: 1.1rem !important;
+        width: 20px !important;
+        height: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Badge "New" ottimizzato */
+    .nav-badge {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: var(--primary-500);
+        color: white;
+        font-size: 0.6rem;
+        padding: 0.15rem 0.4rem;
+        border-radius: 8px;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Search button mobile ottimizzato */
+    .search-toggle-btn {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 10px !important;
+        background: rgba(var(--primary-500-rgb), 0.1) !important;
+        border: 1px solid rgba(var(--primary-500-rgb), 0.2) !important;
+        color: var(--primary-600) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.1rem !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .search-toggle-btn:hover {
+        background: rgba(var(--primary-500-rgb), 0.15) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(var(--primary-500-rgb), 0.2) !important;
+    }
+    
+    /* ========================================================================
+       HAMBURGER MENU SOBRIO - DESIGN MINIMALISTA IN LINEA COL SITO
+       Sostituisce il quadrato brand-icon con hamburger menu pulito
+       ======================================================================== */
+    
+    /* Hamburger button che sostituisce il quadrato originale */
+    .brand-hamburger-btn {
+        width: 44px;
+        height: 44px;
+        background: rgba(31, 41, 55, 0.9); /* Colore scuro come il quadrato originale */
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+    }
+    
+    .brand-hamburger-btn:hover {
+        background: rgba(31, 41, 55, 1);
+        transform: scale(1.05);
+    }
+    
+    .brand-hamburger-btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Linee hamburger - stile minimalista */
+    .brand-hamburger-btn .hamburger-line {
+        width: 18px;
+        height: 2px;
+        background: white;
+        border-radius: 1px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Animazione hamburger to X - sobria */
+    .brand-hamburger-btn.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+    }
+    
+    .brand-hamburger-btn.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .brand-hamburger-btn.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* Menu overlay - più sobrio e pulito */
+    .hamburger-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(31, 41, 55, 0.95); /* Stesso colore del pulsante */
+        backdrop-filter: blur(12px);
+        z-index: 9999;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+    
+    .hamburger-menu-overlay.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Container menu sobrio */
+    .hamburger-menu-container {
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        justify-content: flex-start;
+        padding-top: 80px; /* Spazio per header */
+    }
+    
+    /* Header menu minimalista */
+    .hamburger-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding: 0;
+        border: none;
+    }
+    
+    .menu-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .menu-brand-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(31, 41, 55, 0.8);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+    }
+    
+    .menu-brand-text {
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .hamburger-close-btn {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger-close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Navigazione principale - stile pulito */
+    .hamburger-main-nav {
+        margin-bottom: 2rem;
+    }
+    
+    .hamburger-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger-nav-item:hover {
+        color: white;
+        text-decoration: none;
+        padding-left: 0.5rem;
+    }
+    
+    .hamburger-nav-item.active {
+        color: white;
+        font-weight: 600;
+    }
+    
+    /* Icone navigazione - stile sobrio */
+    .nav-item-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: white;
+        flex-shrink: 0;
+    }
+    
+    .nav-item-text {
+        flex: 1;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .nav-item-count {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 600;
+    }
+    
+    .nav-badge-new {
+        background: #ef4444;
+        color: white;
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+        font-weight: 600;
+        margin-left: 0.5rem;
+    }
+    
+    /* Sezione categorie - minimalista */
+    .hamburger-categories {
+        flex: 1;
+    }
+    
+    .categories-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .category-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .category-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .category-item:hover {
+        color: white;
+        text-decoration: none;
+        padding-left: 0.5rem;
+    }
+    
+    .category-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: white;
+        flex-shrink: 0;
+    }
+    
+    .category-name {
+        flex: 1;
+        font-weight: 400;
+    }
+    
+    .category-count {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 600;
+    }
+    
+    /* Footer menu minimale */
+    .hamburger-menu-footer {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .footer-subtext {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0;
+    }
+    
+    /* ========================================================================
+       BARRA RICERCA MOBILE - DESIGN OTTIMIZZATO E MODERNO
+       Styling migliorato per la barra di ricerca integrata
+       ======================================================================== */
+    
+    /* Pulsante ricerca mobile - stile ottimizzato */
+    .search-toggle-btn {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        color: var(--neutral-700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+    }
+    
+    .search-toggle-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+        color: var(--primary-600);
+    }
+    
+    .search-toggle-btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Barra ricerca integrata - design moderno */
+    .search-bar-integrated {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        padding: 1rem 0 !important;
+        animation: searchSlideDown 0.3s ease-out;
+    }
+    
+    @keyframes searchSlideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Form ricerca - layout mobile ottimizzato */
+    .search-form-integrated {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+    
+    /* Wrapper input di ricerca */
+    .search-input-wrapper-integrated {
+        position: relative !important;
+        flex: 1 !important;
+        width: 100% !important;
+    }
+    
+    /* Input ricerca - stile moderno */
+    .search-input-integrated {
+        width: 100% !important;
+        height: 48px !important;
+        padding: 0.75rem 1rem 0.75rem 3rem !important;
+        border: 2px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 12px !important;
+        font-size: 1rem !important;
+        background: white !important;
+        color: var(--neutral-800) !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .search-input-integrated:focus {
+        outline: none !important;
+        border-color: var(--primary-500) !important;
+        box-shadow: 0 0 0 3px rgba(var(--primary-500-rgb), 0.1), 
+                    0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    .search-input-integrated::placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        font-weight: 400 !important;
+    }
+    
+    /* Icona ricerca */
+    .search-icon-integrated {
+        position: absolute !important;
+        left: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+        font-size: 1.1rem !important;
+        z-index: 2 !important;
+    }
+    
+    /* Pulsante clear ricerca */
+    .search-clear-btn {
+        position: absolute !important;
+        right: 0.75rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 32px !important;
+        height: 32px !important;
+        border: none !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-radius: 8px !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1rem !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .search-clear-btn:hover {
+        background: rgba(0, 0, 0, 0.1) !important;
+        color: var(--danger-600) !important;
+    }
+    
+    /* Pulsante submit ricerca */
+    .search-submit-btn-integrated {
+        width: 100% !important;
+        height: 48px !important;
+        background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+        border: none !important;
+        border-radius: 12px !important;
+        color: white !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(var(--primary-500-rgb), 0.3) !important;
+    }
+    
+    .search-submit-btn-integrated:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 16px rgba(var(--primary-500-rgb), 0.4) !important;
+    }
+    
+    .search-submit-btn-integrated:active {
+        transform: translateY(0) !important;
+    }
+    
+    .search-submit-btn-integrated i {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Responsive per schermi molto piccoli */
+    @media (max-width: 480px) {
+        .search-bar-integrated {
+            padding: 0.75rem 0 !important;
+        }
+        
+        .search-input-integrated,
+        .search-submit-btn-integrated {
+            height: 44px !important;
+            font-size: 0.95rem !important;
+        }
+    }
+    
+    /* ========================================================================
+       HERO SECTION - OTTIMIZZAZIONE MOBILE COMPLETA
+       Riduce altezza, migliora animazioni, mantiene impatto visivo
+       ======================================================================== */
+    
+    .hero-section-modern {
+        /* Riduzione altezza da 75vh a contenuto ottimizzato */
+        min-height: auto;
+        height: auto;
+        padding: 3rem 0 2.5rem 0; /* Padding ottimizzato per mobile */
+        
+        /* Animazione moderna di ingresso */
+        animation: heroSlideIn 0.8s ease-out forwards;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    
+    .hero-section-modern .container {
+        /* Animazione scaglionata per contenuto */
+        animation: heroContentFadeIn 1s ease-out 0.3s forwards;
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    
+    /* Tipografia ottimizzata mobile */
+    .hero-section-modern h1,
+    .hero-section-modern .display-4 {
+        font-size: 1.8rem !important; /* Ridotto da 2.75rem */
+        line-height: 1.1;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        
+        /* Animazione testo fluida */
+        animation: heroTextSlide 1.2s ease-out 0.5s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    .hero-section-modern .lead {
+        font-size: 0.95rem !important; /* Ottimizzato per leggibilità mobile */
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+        
+        /* Animazione subtitle */
+        animation: heroSubtitleFade 1s ease-out 0.7s forwards;
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    
+    /* Form di ricerca ottimizzato */
+    .hero-section-modern .search-form-modern {
+        margin-top: 1.5rem;
+        animation: heroFormSlide 1s ease-out 0.9s forwards;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    
+    .hero-section-modern .input-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .hero-section-modern .form-control {
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    .hero-section-modern .btn {
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        min-height: 48px; /* Touch target ottimizzato */
+    }
+    
+    /* Pulsante secondario ottimizzato */
+    .hero-section-modern .btn-outline-modern {
+        margin-top: 1rem;
+        animation: heroButtonFade 1s ease-out 1.1s forwards;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    
+    /* ========================================================================
+       KEYFRAMES ANIMAZIONI MODERNE HERO SECTION
+       Animazioni fluide, sobrie e ottimizzate per mobile
+       ======================================================================== */
+    
+    @keyframes heroSlideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    @keyframes heroContentFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes heroTextSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(1px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+    
+    @keyframes heroSubtitleFade {
+        0% {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes heroFormSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    @keyframes heroButtonFade {
+        0% {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* =============================================================================
+   HERO SECTION - OTTIMIZZAZIONE PER DISPOSITIVI EXTRA PICCOLI
+   Ulteriore riduzione per schermi < 480px
+   ============================================================================= */
+
+@media (max-width: 479px) {
+    .hero-section-modern {
+        padding: 2rem 0 1.5rem 0; /* Padding ancora più compatto */
+    }
+    
+    .hero-section-modern h1,
+    .hero-section-modern .display-4 {
+        font-size: 1.5rem !important; /* Ultra compatto per piccoli schermi */
+        margin-bottom: 0.75rem;
+    }
+    
+    .hero-section-modern .lead {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-section-modern .search-form-modern {
+        margin-top: 1rem;
+    }
+    
+    .hero-section-modern .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Ottimizzazione testi per leggibilità ultra-mobile */
+    .hero-section-modern .lead br {
+        display: none; /* Rimuove line break su schermi molto piccoli */
+    }
+}
+
+/* =============================================================================
+   CORREZIONI SPECIFICHE PER DISPOSITIVI MOLTO PICCOLI
+   ============================================================================= */
+
+@media (max-width: 480px) {
+    /* Container ultra-responsivo */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Typography mobile ottimizzata */
+    .display-4, .display-5 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    /* Search form compatta */
+    .search-form-modern .input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .search-form-modern .btn {
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    
+    /* Footer responsivo */
+    .footer-modern .row > div {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+/* =============================================================================
+   MIGLIORAMENTI PRESTAZIONI MOBILE
+   ============================================================================= */
+
+/* Prevenzione reflow e repaint */
+* {
+    box-sizing: border-box;
+}
+
+/* Miglior rendering font su mobile */
+@media screen and (max-width: 768px) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+/* Scroll smooth per navigazione mobile */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible migliorato per navigazione keyboard */
+.btn:focus-visible,
+.nav-link-modern:focus-visible,
+.form-control:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+}
+
+/* =============================================================================
+   CORREZIONI COMPATIBILITÀ BROWSER MOBILE
+   ============================================================================= */
+
+/* Safari iOS fixes */
+@supports (-webkit-touch-callout: none) {
+    .form-control {
+        border-radius: 0;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0.375rem;
+    }
+}
+
+/* Android Chrome fixes */
+@media screen and (max-width: 768px) {
+    /* Fix viewport units su Android */
+    .hero-section-modern {
+        min-height: calc(100vh - 80px);
+    }
+}

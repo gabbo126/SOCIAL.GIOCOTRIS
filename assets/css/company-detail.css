@@ -1,0 +1,326 @@
+/* ====================================
+   COMPANY DETAIL PAGE - MODERN DESIGN
+   ==================================== */
+
+/* Header della pagina dettaglio */
+.company-detail-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.company-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0;
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #6c757d;
+    font-weight: bold;
+}
+
+/* Layout principale */
+.company-info-panel {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+/* Sezioni informazioni */
+.info-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.section-icon {
+    margin-right: 0.75rem;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.section-content {
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Descrizione azienda */
+.company-description-full {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 0;
+}
+
+/* Lista contatti moderna */
+.contact-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f8f9fa;
+    font-size: 1rem;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    color: #007bff;
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-list a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Categorie readonly - design moderno */
+.selected-categories-tags-readonly {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.category-tag-readonly {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.category-tag-readonly:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.35);
+}
+
+/* Galleria media moderna */
+.media-gallery-modern {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.custom-carousel-modern {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Thumbnails carosello */
+.carousel-thumbnails {
+    padding: 1rem;
+    background: #f8f9fa;
+    gap: 0.5rem;
+}
+
+.thumbnail-btn {
+    width: 60px;
+    height: 45px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    overflow: hidden;
+    background: none;
+    padding: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.thumbnail-btn.active {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.thumbnail-btn:hover:not(.active) {
+    border-color: #dee2e6;
+    transform: scale(1.05);
+}
+
+.thumbnail-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .company-title {
+        font-size: 2rem;
+    }
+    
+    .company-detail-header {
+        padding: 1.5rem;
+    }
+    
+    .company-info-panel {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .selected-categories-tags-readonly {
+        justify-content: center;
+    }
+    
+    .carousel-thumbnails {
+        justify-content: center !important;
+    }
+}
+
+/* Placeholder immagine default */
+.default-placeholder {
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+.default-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #adb5bd;
+}
+
+/* Animazioni moderne */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.info-section:nth-child(2) { animation-delay: 0.1s; }
+.info-section:nth-child(3) { animation-delay: 0.2s; }
+.info-section:nth-child(4) { animation-delay: 0.3s; }
+
+/* Miglioramenti accessibilità */
+.btn:focus,
+.thumbnail-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Stati hover migliorati */
+.btn-outline-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    transition: all 0.3s ease;
+}
+
+/* ====================================
+   FIX HEADER MOBILE FUORI POSTO
+   ==================================== */
+
+/* Nasconde completamente elementi hamburger nella pagina dettaglio */
+.brand-hamburger-btn,
+.hamburger-menu-overlay,
+.hamburger-menu-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Assicura che la navbar normale sia sempre visibile */
+.navbar-modern {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Override per mobile: forza visibilità navbar normale */
+@media (max-width: 768px) {
+    .navbar-modern {
+        display: flex !important;
+    }
+    
+    .brand-hamburger-btn,
+    .hamburger-menu-overlay {
+        display: none !important;
+    }
+    
+    /* Assicura che il brand sia sempre visibile */
+    .navbar-brand {
+        display: block !important;
+    }
+    
+    /* Fix per navbar collapsible su mobile */
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    
+    .navbar-nav {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        padding: 0.375rem 0.75rem !important;
+        font-size: 0.9rem;
+    }
+}

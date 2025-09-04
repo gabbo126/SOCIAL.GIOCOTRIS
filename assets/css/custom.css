@@ -1,0 +1,327 @@
+/*
+* Custom CSS for Social Gioco Tris
+* Author: Cascade
+*/
+
+/*--------------------------------------------------------------
+# Google Fonts & Root Variables
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #4f46e5; /* Un bel viola/blu */
+  --secondary-color: #6366f1;
+  --dark-color: #1f2937; /* Grigio scuro per testo */
+  --light-color: #f9fafb; /* Sfondo leggermente grigio */
+  --white-color: #ffffff;
+  --gray-color: #6b7280;
+
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# General Styles
+--------------------------------------------------------------*/
+body {
+  font-family: var(--font-secondary);
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px 30px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* Fade-in animation on load */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+.navbar {
+    padding: 1rem 0;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-link {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: var(--dark-color);
+    margin: 0 0.5rem;
+}
+
+.navbar .nav-link.active, .navbar .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+# Company Cards
+--------------------------------------------------------------*/
+.company-card {
+    transition: all 0.3s ease;
+    border: 0;
+    border-radius: 15px;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.company-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.company-card .card-body {
+    padding: 1.5rem;
+}
+
+.company-card .card-title {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.company-card .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+
+/*--------------------------------------------------------------
+# Company Detail Page
+--------------------------------------------------------------*/
+/* Media Gallery - Carousel principale */
+.media-gallery .carousel {
+    max-height: 450px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+#aziendaCarousel .carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.list-unstyled .bi {
+    width: 20px;
+}
+
+.badge {
+    font-weight: 500;
+    font-family: var(--font-secondary);
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.footer h5 {
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer a {
+    color: var(--gray-color);
+}
+
+.footer a:hover {
+    color: var(--white-color);
+}
+
+.footer .social-links a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/*--------------------------------------------------------------
+# Hero Section (Homepage)
+--------------------------------------------------------------*/
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0;
+}
+
+/* Stili aggiuntivi per la pagina aziende.php */
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-fade-in {
+    animation: cardFadeIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Inizia trasparente */
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain; /* o 'cover' a seconda dell'effetto desiderato */
+    padding: 1rem;
+}
+
+/*--------------------------------------------------------------
+# Media Gallery & Carousel Styles
+--------------------------------------------------------------*/
+.media-gallery {
+    position: relative;
+}
+
+.carousel-item {
+    height: 400px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.carousel-item video,
+.carousel-item .ratio {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+/* Miniature di navigazione */
+.thumbnails-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bs-primary) transparent;
+    background-color: rgba(0,0,0,0.03);
+    padding: 8px;
+    border-radius: 0.25rem;
+    text-align: center;
+    margin-top: 10px !important;
+}
+
+.thumbnails-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.thumbnails-container::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+    background-color: var(--bs-primary);
+    border-radius: 10px;
+}
+
+.thumbnail-item {
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+    flex: 0 0 auto;
+    border-radius: 0.25rem;
+    margin-right: 3px;
+    opacity: 0.7;
+}
+
+.thumbnail-item:hover {
+    border-color: var(--bs-primary);
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.thumbnail-item.active {
+    border-color: var(--bs-primary);
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+}
+
+.video-thumbnail i {
+    font-size: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
